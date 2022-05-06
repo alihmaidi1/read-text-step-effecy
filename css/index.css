@@ -1,0 +1,264 @@
+body {
+    background: rgb(255, 175, 83);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.row section {
+    width: calc(50% - 90px);
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px;
+    position: relative;
+}
+
+.container .row-2 {
+    justify-content: flex-end;
+}
+
+.line-center {
+    width: 5px;
+    background: #fff;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    border-radius: 5px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title .inner-title {
+    font-weight: 700;
+}
+
+.title .inner-date {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.616);
+}
+
+.title .inner-link {
+    background: rgb(255, 175, 83);
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.row-1::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    position: relative;
+    transform: rotate(45deg);
+    left: -10px;
+    top: 25px;
+    z-index: -1;
+}
+
+.row-1::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    position: relative;
+    transform: rotate(45deg);
+    left: 10px;
+    top: 25px;
+    z-index: -1;
+    display: none;
+}
+
+@keyframes moveright {
+    0% {
+        left: -10px;
+    }
+    100% {
+        left: -15px;
+    }
+}
+
+.row-1 {
+    position: relative;
+    transform: scale(.1);
+    animation: transalebox .5s ease forwards;
+}
+
+@keyframes transalebox {
+    100% {
+        transform: scale(1);
+    }
+}
+
+.row-1 .circle-before {
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    position: absolute;
+    left: 48.5%;
+    top: 17px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 175, 83);
+    animation: scale 1s ease forwards;
+    box-shadow: inset 2px 2px 4px #ddd, 0px 0px 0px 4px #fff;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(6);
+    }
+    25% {
+        transform: scale(.4);
+    }
+    50% {
+        transform: scale(.75);
+    }
+    75% {
+        transform: scale(.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes widthstar {
+    0% {
+        width: 35px;
+        height: 35px;
+    }
+    100% {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.row-2 .circle-after {
+    content: "";
+    animation: scale 1s 1s ease forwards, widthstar 1s 1s ease forwards;
+    width: 0px;
+    height: 0px;
+    background: #fff;
+    position: absolute;
+    left: 525px;
+    top: 17px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 175, 83);
+    box-shadow: inset 2px 2px 4px #ddd, 0px 0px 0px 4px #fff;
+}
+
+@media(min-width:850px) {
+    .row-1 .circle-before,
+    .row-2 .circle-after {
+        left: 47.8%;
+    }
+}
+
+@media(min-width:900px) {
+    .row-1 .circle-before,
+    .row-2 .circle-after {
+        left: 48%;
+    }
+}
+
+@media(min-width:1000px) {
+    .row-1 .circle-before,
+    .row-2 .circle-after {
+        left: 48.2%;
+    }
+}
+
+@media(min-width:1100px) {
+    .row-1 .circle-before,
+    .row-2 .circle-after {
+        left: 48.4%;
+    }
+}
+
+@media(min-width:1100px) {
+    .row-1 .circle-before,
+    .row-2 .circle-after {
+        left: 48.5%;
+    }
+}
+
+.row-2 {
+    position: relative;
+    transform: scale(.0);
+    animation: transalebox .5s 1s ease forwards;
+}
+
+.row-2::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    position: relative;
+    transform: rotate(45deg);
+    left: 13px;
+    top: 25px;
+}
+
+.center-height {
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width:850px) {
+    .container .line-center {
+        left: 6%;
+    }
+    .row.row-1,
+    .row.row-2 {
+        justify-content: flex-start;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .row.row-1 section {
+        width: 100%;
+    }
+    .row.row-2 section {
+        width: 100%;
+    }
+    .row-1::before {
+        display: block;
+    }
+    .row-1::after {
+        display: none;
+    }
+    .circle-before,
+    .circle-after {
+        display: none !important;
+    }
+}
+
+@media (max-width:500px) {
+    .container .line-center {
+        display: none;
+    }
+    .row section {
+        width: 100%;
+    }
+    .container {
+        margin: 0px;
+        width: 100%;
+    }
+}
